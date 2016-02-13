@@ -18,7 +18,11 @@ app.use(bodyParser.json());
 
 var port = process.env.PORT || 8080;
 
-app.get()
+
+// serve index.html
+router.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/public/index.html'));
+});
 
 // start server
 // ============
