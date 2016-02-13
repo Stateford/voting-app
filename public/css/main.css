@@ -1,0 +1,43 @@
+body, html {
+  margin: 0;
+  height: 100%;
+  width: 100%; }
+
+nav {
+  height: 50px;
+  width: 100%;
+  background-color: lightblue; }
+  nav h1 {
+    margin: 0;
+    display: inline; }
+  nav .nav-tabs {
+    display: inline; }
+    nav .nav-tabs ul {
+      list-style: none;
+      display: inline-block; }
+      nav .nav-tabs ul li {
+        display: inline-block; }
+        nav .nav-tabs ul li a {
+          color: black; }
+          nav .nav-tabs ul li a:hover {
+            color: #262525; }
+
+.nav-tabs {
+  display: inline;
+  float: right; }
+
+.navbar-brand {
+  display: inline; }
+
+.jumbo {
+  background-color: orange;
+  height: 200px; }
+  .jumbo h4 {
+    position: absolute;
+    margin: 0;
+    left: 50%;
+    top: 150px;
+    color: black;
+    text-align: center; }
+
+/*# sourceMappingURL=main.css.map */
