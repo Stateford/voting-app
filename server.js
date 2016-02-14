@@ -1,6 +1,6 @@
 // server.js
 
-// init
+// modules
 // ========
 var express = require('express');
 var app = express();
@@ -10,6 +10,9 @@ var path = require('path');
 //port
 var port = process.env.PORT || 8080;
 
+// connect to database
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017');
 
 // confiure app to use bodyParser()
 // this will let us get the data from a POST
@@ -24,6 +27,10 @@ router.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
+// set the static files location
+app.use(express.static(__dirname + '/public')); 
+
+app.use('/', router);
 // start server
 // ============
 app.listen(port);
