@@ -1,0 +1,18 @@
+// pages/index/heading
+
+.jumbo {
+    height: 400px;
+    background-image: url('../res/analytics.jpg');
+    background-size: cover;
+    .welcome {
+        width: 100%;
+        position: absolute;
+        margin-top: 200px;
+        h3 {
+            margin: 0;
+            text-align: center;
+            color: black;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.41);
+        }
+    }
+}

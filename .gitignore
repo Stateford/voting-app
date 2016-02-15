@@ -1,6 +1,5 @@
 node_modules/
 public/lib/
 public/css/.sass-cache/
-app/db/data/
-*.scss
+data/
 *.map

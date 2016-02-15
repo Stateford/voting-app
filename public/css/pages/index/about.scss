@@ -1,0 +1,21 @@
+// pages/index/about
+
+.about {
+    height: 200px;
+    background-color: #e6e6e6;
+    .about-container {
+        padding-top: 20px;
+        .col {
+            width: 33%;
+            display: inline-block;
+            img {
+                margin-left: 50%;
+                transform: translate(-50%, 0);
+            }
+            p {
+                width: 90%;
+                margin: 0 auto;
+            }
+        }
+    }
+}

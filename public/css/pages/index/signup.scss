@@ -1,0 +1,42 @@
+// pages/index/signup.scss
+
+.signup {
+    height: 300px;
+    background-color: white;
+    .signup-form {
+        float: right;
+        margin-right: 200px;
+        margin-top: 40px;
+        form {
+            input {
+                height: 30px;
+                width: 200px;
+            }
+            button {
+                margin-top: 5px;
+                float: right;
+                margin-left: 10px;
+                &:first-of-type {
+                    background-color: #569edd;
+                    border: 0;
+                    padding: 10px 15px;
+                    border-radius: 15px;
+                    &:hover {
+                        cursor: pointer;
+                        background-color: #9acaf5;
+                    }
+                }
+                &:last-of-type {
+                    background-color: #38a269;
+                    border: 0;
+                    padding: 10px 15px;
+                    border-radius: 15px;
+                    &:hover {
+                        cursor: pointer;
+                        background-color: #62d497;
+                    }
+                }
+            }
+        }
+    }
+}

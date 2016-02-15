@@ -1,0 +1,41 @@
+// layout/nav.scss
+
+nav {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(30, 144, 255, 0);
+    .navbar-brand {
+        margin-top: 10px;
+        margin-left: 15px;
+        display: inline-block;
+        h1 {
+            margin: 0;
+            color: black;
+        }
+    }
+    .nav-tabs {
+        display: inline-block;
+        float: right;
+        margin-right: 20px;
+        ul {
+            display: inline-block;
+            li {
+                display: inline-block;
+                margin-right: 10px;
+                a {
+                    text-decoration: none;
+                    color: black;
+                    
+                    &:hover {
+                        color: #3b3737;
+                    }
+                    
+                    &:visited {
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+}
