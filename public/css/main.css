@@ -8,28 +8,28 @@ nav {
   width: 100%;
   height: 50px;
   background-color: rgba(30, 144, 255, 0); }
-  nav .navbar-brand {
+  nav .navbar-logo {
     margin-top: 10px;
     margin-left: 15px;
     display: inline-block; }
-    nav .navbar-brand h1 {
+    nav .navbar-logo h1 {
       margin: 0;
       color: black; }
-  nav .nav-tabs {
+  nav .nav-links {
     display: inline-block;
     float: right;
     margin-right: 20px; }
-    nav .nav-tabs ul {
+    nav .nav-links ul {
       display: inline-block; }
-      nav .nav-tabs ul li {
+      nav .nav-links ul li {
         display: inline-block;
         margin-right: 10px; }
-        nav .nav-tabs ul li a {
+        nav .nav-links ul li a {
           text-decoration: none;
           color: black; }
-          nav .nav-tabs ul li a:hover {
+          nav .nav-links ul li a:hover {
             color: #3b3737; }
-          nav .nav-tabs ul li a:visited {
+          nav .nav-links ul li a:visited {
             color: black; }
 
 footer {
@@ -66,19 +66,28 @@ footer {
       text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.41); }
 
 .about {
-  height: 200px;
-  background-color: #e6e6e6; }
+  min-height: 200px;
+  background-color: #e6e6e6;
+  padding-bottom: 20px; }
   .about .about-container {
-    padding-top: 20px; }
-    .about .about-container .col {
-      width: 33%;
-      display: inline-block; }
-      .about .about-container .col img {
-        margin-left: 50%;
-        transform: translate(-50%, 0); }
-      .about .about-container .col p {
-        width: 90%;
-        margin: 0 auto; }
+    padding-top: 30px; }
+    .about .about-container .col-md-4 i {
+      font-size: 3em;
+      margin-left: 50%;
+      transform: translate(-50%, 0);
+      margin-bottom: 20px; }
+    .about .about-container .col-md-4 p {
+      width: 90%;
+      margin: 0 auto; }
+
+#bolt {
+  color: orange; }
+
+#chart {
+  color: dodgerblue; }
+
+#users {
+  color: #10bc10; }
 
 .signup {
   height: 300px;
@@ -94,21 +103,5 @@ footer {
       margin-top: 5px;
       float: right;
       margin-left: 10px; }
-      .signup .signup-form form button:first-of-type {
-        background-color: #569edd;
-        border: 0;
-        padding: 10px 15px;
-        border-radius: 15px; }
-        .signup .signup-form form button:first-of-type:hover {
-          cursor: pointer;
-          background-color: #9acaf5; }
-      .signup .signup-form form button:last-of-type {
-        background-color: #38a269;
-        border: 0;
-        padding: 10px 15px;
-        border-radius: 15px; }
-        .signup .signup-form form button:last-of-type:hover {
-          cursor: pointer;
-          background-color: #62d497; }
 
 /*# sourceMappingURL=main.css.map */

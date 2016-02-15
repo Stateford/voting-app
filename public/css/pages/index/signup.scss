@@ -16,26 +16,6 @@
                 margin-top: 5px;
                 float: right;
                 margin-left: 10px;
-                &:first-of-type {
-                    background-color: #569edd;
-                    border: 0;
-                    padding: 10px 15px;
-                    border-radius: 15px;
-                    &:hover {
-                        cursor: pointer;
-                        background-color: #9acaf5;
-                    }
-                }
-                &:last-of-type {
-                    background-color: #38a269;
-                    border: 0;
-                    padding: 10px 15px;
-                    border-radius: 15px;
-                    &:hover {
-                        cursor: pointer;
-                        background-color: #62d497;
-                    }
-                }
             }
         }
     }

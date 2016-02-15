@@ -1,16 +1,17 @@
 // pages/index/about
 
 .about {
-    height: 200px;
+    min-height: 200px;
     background-color: #e6e6e6;
+    padding-bottom: 20px;
     .about-container {
-        padding-top: 20px;
-        .col {
-            width: 33%;
-            display: inline-block;
-            img {
+        padding-top: 30px;
+        .col-md-4 {
+            i {
+                font-size: 3em;
                 margin-left: 50%;
                 transform: translate(-50%, 0);
+                margin-bottom: 20px;
             }
             p {
                 width: 90%;
@@ -18,4 +19,16 @@
             }
         }
     }
+}
+
+#bolt {
+    color: orange;
+}
+
+#chart {
+    color: dodgerblue;
+}
+
+#users {
+    color: #10bc10;
 }

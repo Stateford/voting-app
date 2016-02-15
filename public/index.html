@@ -3,6 +3,11 @@
     <head>
         <meta charset="utf-8">
         <title>uVote!</title>
+        <script src="lib/angular/angular.min.js"></script>
+        <script src="lib/jQuery/dist/jquery.min.js"></script>
+        <link type="text/css" rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+        <link type="text/css" rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-theme.min.css">
+        <link type="text/css" rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
         <link type="text/css" rel="stylesheet" href="css/main.css">
     </head>
     <body>
@@ -10,43 +15,39 @@
         <div class="wrapper">
         
             <!--NAVIGATION-->
-            <nav class="navbar">
-                <div class="container">
-                    <div class="navbar-brand">
+            <nav class="navigation">
+                    <div class="navbar-logo">
                         <h1>uVote!</h1>
                     </div>
-                    <div class="nav-tabs">
+                    <div class="nav-links">
                         <ul>
                             <li><a href="#">Sign-In</a></li>
                             <li><a href="#">Sign-Up</a></li>
                         </ul>
                     </div>
-                </div>
             </nav>  <!--END NAV-->
             
             <!--HEADING-->
             <header class="jumbo">
-                <div class="container">
-                    <div class="welcome">
-                        <h3>Welcome to <strong>uVote!</strong></h3>
-                    </div>
+                <div class="welcome">
+                    <h3>Welcome to <strong>uVote!</strong></h3>
                 </div>
             </header>   <!--END HEADING-->
             
             <!--ABOUT-->
             <div class="about">
                 <div class="about-container">
-                    <div class="col">
-                        <img src="#">
-                        <p>An quem quibusdam cernantur an deserunt in summis quibusdam. Et ullamco distinguantur, ea illum dolor eu ingeniis.</p>
+                    <div class="col-md-4">
+                        <i id='bolt' class="fa fa-bolt"></i>
+                        <p>Powered by Node.js, this voting app is lightning fast.</p>
                     </div>
-                    <div class="col">
-                        <img src="#">
-                        <p>An quem quibusdam cernantur an deserunt in summis quibusdam. Et ullamco distinguantur, ea illum dolor eu ingeniis.</p>
+                    <div class="col-md-4">
+                        <i id='chart' class="fa fa-bar-chart"></i>
+                        <p>uVote! offers analytics to help you understand your votes.</p>
                     </div>
-                    <div class="col">
-                        <img src="#">
-                        <p>An quem quibusdam cernantur an deserunt in summis quibusdam. Et ullamco distinguantur, ea illum dolor eu ingeniis.</p>
+                    <div class="col-md-4">
+                        <i id="users" class="fa fa-users"></i>
+                        <p>Get a direct link to share your polls with your friends.</p>
                     </div>
                 </div>
             </div>  <!--END ABOUT-->
@@ -58,8 +59,8 @@
                         <input name="username" type="text" placeholder="Username" required> <br/>
                         <input name="email" type="text" placeholder="E-Mail" required> <br/>
                         <input name="password" type="text" placeholder="Password" required> <br/>
-                        <button type="submit">Sign-In</button>
-                        <button type="reset">Sign-Up</button>
+                        <button class="btn btn-primary" type="submit">Sign-In</button>
+                        <button class="btn btn-success" type="reset">Sign-Up</button>
                     </form>
                 </div>
             </div>  <!--END SIGNUP-->
