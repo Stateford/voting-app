@@ -22,12 +22,33 @@ app.use(bodyParser.json());
 var port = process.env.PORT || 8080;
 
 
+// set up router
+// =========================
+var router = express.Router();
+
+//middleware to use for all requests
+router.use(function(req, res, next) {
+    //do logging
+    console.log('Something is happening.');
+    next();
+});
+
+
 // serve index.html
+// -------------------
 router.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
+// api for db
+// -----------------
+router.route('/polldata/:id')
+    .get(function(req, res) {
+        res.send('data');
+    });
+
 // set the static files location
+// ---------------------------------
 app.use(express.static(__dirname + '/public')); 
 
 app.use('/', router);
