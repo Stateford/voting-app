@@ -1,41 +1,48 @@
-
-<DOCTYPE>html</DOCTYPE>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <title>uVote! | Create a Poll</title>
-    <style type="text/css" rel="stylesheet" href="css/main.css"></style>
-    <script src="js/newpoll.js"></script>
-  </head>
-  <body>
-    <div class="wrapper">
-      <nav class="navigation">
-        <div class="container">
-          <div class="nav-logo"></div>
-          <div class="nav-links">
-            <ul>
-              <li> <a href="#">link</a></li>
-              <li><a href="#">link</a></li>
-              <li><a href="#">link</a></li>
-            </ul>
-          </div>
+    <head>
+        <meta charset="utf-8"/>
+        <title>uVote! | Create a Poll</title>
+        <link type="text/css" rel="stylesheet" href="css/main.css">
+        <script src="js/newpoll.js"></script>
+    </head>
+    <body>
+        <!--WRAPPER-->
+        <div class="wrapper">
+            <!--NAVIGATION-->
+            <nav class="navigation">
+                <div class="container">
+                    <div class="nav-logo">
+                        <h1>uVote!</h1>
+                    </div>
+                    <div class="nav-links">
+                        <ul>
+                            <li><a href="#">link</a></li>
+                            <li><a href="#">link</a></li>
+                            <li><a href="#">link</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!--HEADING-->
+            <div class="heading">
+                <div class="container">
+                    <h1 id="instruction">Create your uVote!</h1>
+                </div>
+            </div>
+            <!--CREATE POLL-->
+            <div class="pollCreation">
+                <form action="/:user/newpoll" method="POST">
+                    <input id="question" type="text" name="question" placeholder="question"/><br/>
+                    <input id="option1" type="text" name="option1" placeholder="Option 1"/><br/>
+                    <input id="option2" type="text" name="option2" placeholder="Option 2"/>
+                    <button type="button" class="addOption">+</button><br/>
+                    <div class="poll-btn">
+                        <button type="submit" class="submit">Submit </button>
+                        <button type="reset" class="clear">Clear</button>
+                    </div>
+                </form>
+            </div>
         </div>
-      </nav>
-      <div class="heading">
-        <div class="container">
-          <h1 id="instruction">Create your uVote!</h1>
-        </div>
-      </div>
-      <div class="pollCreation">
-        <form action="/:user/newpoll" method="POST">
-          <input id="question" type="text" name="question" placeholder="question"/><br/>
-          <input id="option1" type="text" name="option1" placeholder="Option 1"/><br/>
-          <input id="option2" type="text" name="option2" placeholder="Option 2"/>
-          <button type="button" class="addOption">+</button><br/>
-          <button type="submit" class="submit">Submit </button>
-          <button type="reset" class="clear">Clear</button>
-        </form>
-      </div>
-    </div>
-  </body>
+    </body>
 </html>

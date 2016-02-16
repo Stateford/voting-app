@@ -104,4 +104,24 @@ footer {
       float: right;
       margin-left: 10px; }
 
+.heading {
+  width: 100%;
+  height: 400px; }
+  .heading #instruction {
+    margin: 0; }
+
+.pollCreation {
+  background-color: aquamarine;
+  padding: 20px; }
+  .pollCreation form input {
+    height: 30px;
+    width: 150px; }
+  .pollCreation form .addOption {
+    border-radius: 50%;
+    color: green;
+    background-color: white;
+    border: 1px solid green; }
+  .pollCreation form .poll-btn {
+    float: right; }
+
 /*# sourceMappingURL=main.css.map */

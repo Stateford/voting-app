@@ -1,0 +1,21 @@
+// pages/newpoll/pollcreate
+
+.pollCreation {
+    background-color: aquamarine;
+    padding: 20px;
+    form {
+        input {
+            height: 30px;
+            width: 150px;
+        }
+        .addOption {
+            border-radius: 50%;
+            color: green;
+            background-color: white;
+            border: 1px solid green;
+        }
+        .poll-btn {
+            float: right;
+        }
+    }
+}
