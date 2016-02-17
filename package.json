@@ -10,9 +10,12 @@
   "author": "idietmoran",
   "license": "MIT",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
     "express-validator": "^2.19.1",
-    "mongoose": "^4.4.3"
+    "mongoose": "^4.4.3",
+    "morgan": "^1.6.1",
+    "passport-local": "^1.0.0"
   }
 }
