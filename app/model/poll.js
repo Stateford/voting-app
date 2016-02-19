@@ -14,5 +14,6 @@ var optionsSchema = new Schema({
 
 exports.pollSchema = new mongoose.Schema({
     question: { type: String, required: true},
+    etag: Number,
     options: [optionsSchema],
 });

@@ -13,27 +13,31 @@
     <body>
         <!--WRAPPER-->
         <div class="wrapper">
-        
+
             <!--NAVIGATION-->
             <nav class="navigation">
                     <div class="navbar-logo">
                         <h1>uVote!</h1>
                     </div>
+                    <div class="user-lookup">
+                        <input id="user-search" type="text" accept="text/plain" />
+                    </div>
                     <div class="nav-links">
                         <ul>
+                            <li><a href="/trending">Trending</a></li>
                             <li><a href="/signin">Sign-In</a></li>
                             <li><a href="/signup">Sign-Up</a></li>
                         </ul>
                     </div>
             </nav>  <!--END NAV-->
-            
+
             <!--HEADING-->
             <header class="jumbo">
                 <div class="welcome">
                     <h3>Welcome to <strong>uVote!</strong></h3>
                 </div>
             </header>   <!--END HEADING-->
-            
+
             <!--ABOUT-->
             <div class="about">
                 <div class="about-container">
@@ -51,7 +55,14 @@
                     </div>
                 </div>
             </div>  <!--END ABOUT-->
-            
+
+            <!-- LATEST -->
+            <div class="latest">
+                <div class="container">
+
+                </div>
+            </div>
+
             <!--SIGNUP-->
             <div class="signup">
                 <div class="signup-form">
@@ -65,7 +76,7 @@
                     </form>
                 </div>
             </div>  <!--END SIGNUP-->
-            
+
             <!--FOOTER-->
             <footer class="footer">
                 <div class="container">
@@ -74,7 +85,14 @@
                     </ul>
                 </div>
             </footer>   <!--END FOOTER-->
-            
+
+            <!-- MODULE -->
+            <script src="js/app.js"></script>
+            <!-- SERVICES -->
+            <script src="js/services/latest.js"></script>
+            <script src="js/services/userPoll.js"></script>
+            <!-- CONTROLLER -->
+            <script src="js/controller/latestPoll.js"></script>
         </div>  <!--END WRAP-->
     </body>
 </html>

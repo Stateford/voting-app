@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>User</title>
+        <script src="lib/angular/angular.min.js"></script>
+        <script src="lib/jQuery/dist/jquery.min.js"></script>
+        <link type="text/css" rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <!-- WRAPPER -->
+        <div class="wrapper">
+
+            <!-- USER BODY -->
+            <div class="userbody">
+                <div class="container">
+                    <!-- USER CARD -->
+                    <div class="usercard">
+                        <h4>{{ user.username }}</h4>
+                        <p>Pollscore: {{ user.polls }}</p>
+                    </div>
+                    <!-- LIST OF POLLS -->
+                    <div class="userpolls">
+                        <div class="pollcard">
+                            <!-- DIRECTIVE GOES HERE -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- END WRAP -->
+    </body>
+</html>

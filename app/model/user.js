@@ -1,8 +1,14 @@
 // app/model/user.js
 
+// modules
+// =========
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
 var Schema = mongoose.Schema;
+
+// scripts
+var configDB = require('../../config/database');
+var connection = mongoose.createConnection(configDB.db);
 
 var userSchema = new Schema({
     username: String,
@@ -21,8 +27,7 @@ userSchema.methods.generateHash = function(password) {
 
 // checking if the password is valid
 userSchema.methods.validPassword = function(password) {
-    return bcrypt.compareSync(password
-    this.password);
+    return bcrypt.compareSync(password, this.password);
 };
 
 

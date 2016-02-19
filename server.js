@@ -6,30 +6,41 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
-var passport = require('passport');
-var flash = require('connect-flash');
+// var passport = require('passport');
+// var passport-local = require('passport-local');
+// var flash = require('connect-flash');
 
 var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 
-//port
-var port = process.env.PORT || 8080;
+// config
+var configDB = require('./config/database');
+var host = require('./config/host');
+
+// scripts
+var dbSearch = require('./app/scripts/dbsearch');
 
 // connect to database
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017');
+// mongoose.connect(configDB.db);
+
 
 // confiure app to use bodyParser()
 // this will let us get the data from a POST
 app.use(morgan('dev'));  // logs every request to console
-app.use(cookieParser()); //read cookies
-app.use(bodyParser());
+// app.use(cookieParser()); //read cookies
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var port = process.env.PORT || 8080;
+// load mongoose schemas
+var User = require('./app/model/user');
+var Poll = require('./app/model/poll');
+
+// use middleware
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 
 // set up router
@@ -43,12 +54,34 @@ router.use(function(req, res, next) {
     next();
 });
 
+// route for creating a new user using POST
+router.route('/newuser')
+    .post(function(req, res) {
+        var username = req.body.username;
+        var email = req.body.email;
+        var password = req.body.password
 
-// serve index.html
-// -------------------
-router.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/public/index.html'));
-});
+        if(dbSearch.user(username)) {
+            res.send('username is already in use')
+        } else if (dbSearch.email(email)) {
+            res.send('email is already in use');
+        } else if (username !== '' && email !== '' && password !== '') {
+            var user = new User();
+            user.username = username;
+            user.email = email;
+            user.password = password;
+
+            user.save(function(err) {
+                if(err)
+                    res.send(err);
+
+                res.send('user created!');
+            })
+        } else {
+            res.send('please enter all required fields')
+        }
+    });
+
 
 // api for db
 // -----------------
@@ -56,12 +89,42 @@ router.route('/polldata/:id')
     .get(function(req, res) {
         res.send('data');
     });
+
+// SENDING FILES TO CLIENT
+// =========================
+// serve index.html
+// -------------------
+router.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/public/index.html'));
+});
+
+// mypolls.html
+router.get('/mypolls', function(req, res) {
+    res.sendFile(path.join(__dirname + '/public/mypolls.html'));
+});
+// newpoll.html
+router.get('/newpoll', function(req, res) {
+    res.sendFile(path.join(__dirname + '/public/newpoll.html'));
+});
+// signup.html
+router.get('/signup', function(req, res) {
+    res.sendFile(path.join(__dirname + '/public/signup.html'));
+});
+// trending.html
+router.get('/trending', function(req, res) {
+    res.sendFile(path.join(__dirname + '/public/trending.html'));
+});
+// user.html
+router.get('/user/*', function(req, res) {
+    res.sendFile(path.join(__dirname + '/public/user.html'));
+});
+
 // set the static files location
 // ---------------------------------
-app.use(express.static(__dirname + '/public')); 
+app.use(express.static(__dirname + '/public'));
 
 app.use('/', router);
 // start server
 // ============
-app.listen(port);
-console.log('server is listening to port: ' + port);
+app.listen(host.port);
+console.log('server is listening to port: ' + host.port);
