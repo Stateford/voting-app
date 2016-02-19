@@ -1,4 +1,4 @@
-html, body {
+html, body, .wrapper {
   margin: 0;
   height: 100%;
   width: 100%; }
@@ -9,8 +9,8 @@ nav {
   height: 50px;
   background-color: rgba(30, 144, 255, 0); }
   nav .navbar-logo {
-    margin-top: 10px;
-    margin-left: 15px;
+    margin-top: 8px;
+    margin-left: 20px;
     display: inline-block; }
     nav .navbar-logo h1 {
       margin: 0;
@@ -23,7 +23,8 @@ nav {
       display: inline-block; }
       nav .nav-links ul li {
         display: inline-block;
-        margin-right: 10px; }
+        margin-right: 10px;
+        margin-top: 15px; }
         nav .nav-links ul li a {
           text-decoration: none;
           color: black; }
@@ -123,5 +124,31 @@ footer {
     border: 1px solid green; }
   .pollCreation form .poll-btn {
     float: right; }
+
+.sup {
+  position: absolute;
+  background-color: #202529;
+  border-bottom: 1px solid rgba(196, 196, 196, 0.3); }
+  .sup .navbar-logo h1 {
+    color: #9f9f9f; }
+  .sup .nav-links a {
+    color: #9f9f9f; }
+    .sup .nav-links a:visited {
+      color: #9f9f9f; }
+    .sup .nav-links a:hover {
+      color: #e8e8e8; }
+
+.signup-body {
+  padding-top: 50px;
+  height: 100%;
+  text-align: center;
+  background-color: #212a2e; }
+  .signup-body .signup-header {
+    background-color: #212a2e;
+    padding-top: 50px;
+    color: #9f9a9a;
+    padding-bottom: 30px; }
+  .signup-body .signup-form {
+    background-color: #212a2e; }
 
 /*# sourceMappingURL=main.css.map */

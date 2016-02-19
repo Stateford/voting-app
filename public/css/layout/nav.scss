@@ -6,8 +6,8 @@ nav {
     height: 50px;
     background-color: rgba(30, 144, 255, 0);
     .navbar-logo {
-        margin-top: 10px;
-        margin-left: 15px;
+        margin-top: 8px;
+        margin-left: 20px;
         display: inline-block;
         h1 {
             margin: 0;
@@ -23,6 +23,7 @@ nav {
             li {
                 display: inline-block;
                 margin-right: 10px;
+                margin-top: 15px;
                 a {
                     text-decoration: none;
                     color: black;

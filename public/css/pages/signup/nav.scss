@@ -1,0 +1,23 @@
+// pages/signup/nav.scss
+
+.sup {
+    position: absolute;
+    background-color: #202529;
+    border-bottom: 1px solid rgba(196, 196, 196, 0.3);
+    .navbar-logo {
+        h1 {
+            color: #9f9f9f;
+        }
+    }
+    .nav-links {
+        a {
+            color: #9f9f9f;
+            &:visited {
+                color: #9f9f9f;
+            }
+            &:hover {
+                color: #e8e8e8;
+            }
+        }
+    }
+}

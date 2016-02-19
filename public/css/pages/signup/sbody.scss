@@ -1,0 +1,19 @@
+// pages/signup/sbody.scss
+
+.signup-body {
+    padding-top: 50px;
+    height: 100%;
+    text-align: center;
+    background-color: #212a2e;
+    .signup-header {
+	   background-color: #212a2e;
+        padding-top: 50px;
+        color: #9f9a9a;
+        .signup-info {
+        }
+        padding-bottom: 30px;
+    }
+    .signup-form {
+        background-color: #212a2e;
+    }
+}
