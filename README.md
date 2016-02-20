@@ -11,6 +11,7 @@ a project for FreeCodeCamp
 * set up user creation with proper hashing
 * set up proper authentication for local users
 * set up proper poll storage
+* require ngRoute for deciding which user is logged in from URL
 
 ## BUGS
 * password not hashing

@@ -69,7 +69,7 @@ router.route('/newuser')
             var user = new User();
             user.username = username;
             user.email = email;
-            user.password = password;
+            user.password = user.generateHash(password);
 
             user.save(function(err) {
                 if(err)
@@ -83,12 +83,29 @@ router.route('/newuser')
     });
 
 
-// api for db
-// -----------------
-router.route('/polldata/:id')
+// ROUTES FOR APIs
+// ====================
+// poll data
+router.route('/api/polldata/:id')
     .get(function(req, res) {
         res.send('data');
     });
+// user data
+router.route('/users/:username')
+    var input = req.params.username;
+    .get(function(req, res) {
+        if(dbSearch.user(input)) {
+            User.find({ username: input}, function(err, links) {
+                if(links.length){
+                    res.json(links);
+                } else {
+                    res.send('user does not exist');
+                }
+            })
+        }
+    });
+
+
 
 // SENDING FILES TO CLIENT
 // =========================
