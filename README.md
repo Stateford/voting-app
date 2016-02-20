@@ -8,10 +8,11 @@ a project for FreeCodeCamp
 * https://thinkster.io/angularjs-jwt-auth
 
 ## TODO
-* set up user creation with proper hashing
+* remove dbsearch script and use it properly in routes
 * set up proper authentication for local users
+* set up passport and passport-local
 * set up proper poll storage
 * require ngRoute for deciding which user is logged in from URL
 
 ## BUGS
-* password not hashing
+* duplicate users can be created

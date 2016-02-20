@@ -31,9 +31,6 @@ var mongoose = require('mongoose');
 app.use(morgan('dev'));  // logs every request to console
 // app.use(cookieParser()); //read cookies
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
 // load mongoose schemas
 var User = require('./app/model/user');
 var Poll = require('./app/model/poll');
@@ -92,8 +89,8 @@ router.route('/api/polldata/:id')
     });
 // user data
 router.route('/users/:username')
-    var input = req.params.username;
     .get(function(req, res) {
+        var input = req.params.username;
         if(dbSearch.user(input)) {
             User.find({ username: input}, function(err, links) {
                 if(links.length){
