@@ -27,7 +27,7 @@ module.exports = {
             } else {
                 return false;
             }
-        })
+        });
     },
     // search by email to check if it already exists in database
     email: function(str) {
@@ -37,6 +37,6 @@ module.exports = {
             } else {
                 return false;
             }
-        })
+        });
     }
 };

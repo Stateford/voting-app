@@ -6,9 +6,9 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
-// var passport = require('passport');
-// var passport-local = require('passport-local');
-// var flash = require('connect-flash');
+var passport = require('passport');
+var passportlocal = require('passport-local');
+var flash = require('connect-flash');
 
 var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -35,6 +35,10 @@ app.use(morgan('dev'));  // logs every request to console
 var User = require('./app/model/user');
 var Poll = require('./app/model/poll');
 
+// connect to the database
+mongoose.connect(configDB.db);
+
+
 // use middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -56,10 +60,10 @@ router.route('/newuser')
     .post(function(req, res) {
         var username = req.body.username;
         var email = req.body.email;
-        var password = req.body.password
+        var password = req.body.password;
 
         if(dbSearch.user(username)) {
-            res.send('username is already in use')
+            res.send('username is already in use');
         } else if (dbSearch.email(email)) {
             res.send('email is already in use');
         } else if (username !== '' && email !== '' && password !== '') {
@@ -73,9 +77,9 @@ router.route('/newuser')
                     res.send(err);
 
                 res.send('user created!');
-            })
+            });
         } else {
-            res.send('please enter all required fields')
+            res.send('please enter all required fields');
         }
     });
 
@@ -98,7 +102,7 @@ router.route('/users/:username')
                 } else {
                     res.send('user does not exist');
                 }
-            })
+            });
         }
     });
 
