@@ -9,6 +9,7 @@ a project for FreeCodeCamp
 
 ## TODO
 * remove dbsearch script and use it properly in routes
+* put all routes in one folder
 * set up proper authentication for local users
 * set up passport and passport-local
 * set up proper poll storage
