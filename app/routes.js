@@ -4,6 +4,7 @@
 // =========
 var User = require('./model/user');
 var Poll = require('./model/poll');
+var path = require('path');
 
 module.exports = function(app, router) {
     //middleware to use for all requests
@@ -87,7 +88,7 @@ module.exports = function(app, router) {
         res.sendFile(path.join(__dirname + '/public/signup.html'));
     });
     // trending.html
-    router.get('/trending', function(req, res) {
+    router.get('/trending/', function(req, res) {
         res.sendFile(path.join(__dirname + '/public/trending.html'));
     });
     // user.html

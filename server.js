@@ -36,7 +36,7 @@ var User = require('./app/model/user');
 var Poll = require('./app/model/poll');
 
 // connect to the database
-mongoose.connect(configDB.db);
+// mongoose.connect(configDB.db);
 
 
 // use middleware
