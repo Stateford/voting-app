@@ -72,27 +72,27 @@ module.exports = function(app, router) {
     // serve index.html
     // -------------------
     router.get('/', function(req, res) {
-        res.sendFile(path.join(__dirname + '/public/index.html'));
+        res.sendFile(path.join(__dirname + '/../public/index.html'));
     });
 
     // mypolls.html
     router.get('/mypolls', function(req, res) {
-        res.sendFile(path.join(__dirname + '/public/mypolls.html'));
+        res.sendFile(path.join(__dirname + '/../public/mypolls.html'));
     });
     // newpoll.html
     router.get('/newpoll', function(req, res) {
-        res.sendFile(path.join(__dirname + '/public/newpoll.html'));
+        res.sendFile(path.join(__dirname + '/../public/newpoll.html'));
     });
     // signup.html
     router.get('/signup', function(req, res) {
-        res.sendFile(path.join(__dirname + '/public/signup.html'));
+        res.sendFile(path.join(__dirname + '/../public/signup.html'));
     });
     // trending.html
     router.get('/trending/', function(req, res) {
-        res.sendFile(path.join(__dirname + '/public/trending.html'));
+        res.sendFile(path.join(__dirname + '/../public/trending.html'));
     });
     // user.html
     router.get('/user/*', function(req, res) {
-        res.sendFile(path.join(__dirname + '/public/user.html'));
+        res.sendFile(path.join(__dirname + '/../public/user.html'));
     });
 };
