@@ -1,17 +1,19 @@
 // app/scripts/dbsearch.js
+/*jslint node: true*/
+/*jslint esnext: true*/
 //
 // module
 // ===============================
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 // config
 // ========
-var configDB = require('../../config/database');
+const configDB = require('../../config/database');
 
 // schemas
 // ==========
-var User = require('../model/user');
-var Poll = require('../model/poll');
+const User = require('../model/user');
+const Poll = require('../model/poll');
 
 // establish connection
 mongoose.connect(configDB.db);
@@ -20,8 +22,8 @@ mongoose.connect(configDB.db);
 
 module.exports = {
     // search by username to check if it already exists in database
-    user: function(str) {
-        User.find({ username: str }, function(err, user) {
+    user: (str) => {
+        User.find({ username: str }, (err, user) => {
             if(user.length) {
                 return true;
             } else {
@@ -30,8 +32,8 @@ module.exports = {
         });
     },
     // search by email to check if it already exists in database
-    email: function(str) {
-        User.find({ email: str }, function(err, user) {
+    email: (str) => {
+        User.find({ email: str }, (err, user) => {
             if(user.length) {
                 return true;
             } else {

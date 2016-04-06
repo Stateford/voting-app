@@ -1,16 +1,18 @@
 // app/model/poll.js
+/*jslint node: true*/
+/*jslint esnext: true*/
 
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-var voteSchema = new Schema({
+const voteSchema = new Schema({
     ip: 'String'
 });
 
-var optionsSchema = new Schema({
+const optionsSchema = new Schema({
     option: String,
     votes: [voteSchema]
-})
+});
 
 exports.pollSchema = new mongoose.Schema({
     question: { type: String, required: true},

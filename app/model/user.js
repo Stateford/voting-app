@@ -1,16 +1,18 @@
 // app/model/user.js
+/*jslint node: true*/
+/*jslint esnext: true*/
 
 // modules
 // =========
-var mongoose = require('mongoose');
-var bcrypt = require('bcrypt-nodejs');
-var Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt-nodejs');
+const Schema = mongoose.Schema;
 
 // scripts
-var configDB = require('../../config/database');
-var connection = mongoose.createConnection(configDB.db);
+const configDB = require('../../config/database');
+const connection = mongoose.createConnection(configDB.db);
 
-var userSchema = new Schema({
+const userSchema = new Schema({
     username: String,
     email: String,
     password: String,
@@ -21,12 +23,12 @@ var userSchema = new Schema({
 // ================
 
 // generate a hash
-userSchema.methods.generateHash = function(password) {
+userSchema.methods.generateHash = (password) => {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 };
 
 // checking if the password is valid
-userSchema.methods.validPassword = function(password) {
+userSchema.methods.validPassword = (password) => {
     return bcrypt.compareSync(password, this.password);
 };
 
