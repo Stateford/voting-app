@@ -1,14 +1,18 @@
 // app/routes.js
+/*jslint node: true*/
+/*jslint esnext: true*/
 
+"use strict";
 // MODULES
 // =========
-var User = require('./model/user');
-var Poll = require('./model/poll');
-var path = require('path');
+let User = require('./model/user');
+let Poll = require('./model/poll');
+let path = require('path');
+let dbSearch = require('./scripts/dbsearch');
 
-module.exports = function(app, router) {
+module.exports = (app, router) => {
     //middleware to use for all requests
-    router.use(function(req, res, next) {
+    router.use((req, res, next) => {
         //do logging
         console.log('Something is happening.');
         next();
@@ -71,28 +75,32 @@ module.exports = function(app, router) {
     // =========================
     // serve index.html
     // -------------------
-    router.get('/', function(req, res) {
+    router.get('/', (req, res) => {
         res.sendFile(path.join(__dirname + '/../public/index.html'));
     });
 
     // mypolls.html
-    router.get('/mypolls', function(req, res) {
+    router.get('/mypolls', (req, res) => {
         res.sendFile(path.join(__dirname + '/../public/mypolls.html'));
     });
     // newpoll.html
-    router.get('/newpoll', function(req, res) {
+    router.get('/newpoll', (req, res) => {
         res.sendFile(path.join(__dirname + '/../public/newpoll.html'));
     });
     // signup.html
-    router.get('/signup', function(req, res) {
+    router.get('/signup', (req, res) => {
         res.sendFile(path.join(__dirname + '/../public/signup.html'));
     });
+    // signin.html
+    router.get('/signin', (req,res) => {
+        res.sendFile(path.join(__dirname + '/../public/signin.html'));
+    });
     // trending.html
-    router.get('/trending/', function(req, res) {
+    router.get('/trending/', (req, res) => {
         res.sendFile(path.join(__dirname + '/../public/trending.html'));
     });
     // user.html
-    router.get('/user/*', function(req, res) {
+    router.get('/user/*', (req, res) => {
         res.sendFile(path.join(__dirname + '/../public/user.html'));
     });
 };
