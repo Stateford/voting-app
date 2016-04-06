@@ -1,39 +1,41 @@
 // server.js
+/*jslint node: true*/
+/*jslint esnext: true*/
 
 // modules
 // ========
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-var path = require('path');
-var passport = require('passport');
-var passportlocal = require('passport-local');
-var flash = require('connect-flash');
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const path = require('path');
+const passport = require('passport');
+const passportlocal = require('passport-local');
+const flash = require('connect-flash');
 
-var morgan = require('morgan');
-var cookieParser = require('cookie-parser');
-var session = require('express-session');
+const morgan = require('morgan');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
 
 // config
-var configDB = require('./config/database');
-var host = require('./config/host');
+const configDB = require('./config/database');
+const host = require('./config/host');
 
 // scripts
-var dbSearch = require('./app/scripts/dbsearch');
+const dbSearch = require('./app/scripts/dbsearch');
 
 // connect to database
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 // mongoose.connect(configDB.db);
 
 
 // confiure app to use bodyParser()
-// this will let us get the data from a POST
+// this will const us get the data from a POST
 app.use(morgan('dev'));  // logs every request to console
 // app.use(cookieParser()); //read cookies
 
 // load mongoose schemas
-var User = require('./app/model/user');
-var Poll = require('./app/model/poll');
+const User = require('./app/model/user');
+const Poll = require('./app/model/poll');
 
 // connect to the database
 // mongoose.connect(configDB.db);
@@ -46,7 +48,7 @@ app.use(bodyParser.json());
 
 // set up router
 // =========================
-var router = express.Router();
+const router = express.Router();
 
 require('./app/routes')(app, router);
 

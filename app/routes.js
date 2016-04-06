@@ -5,10 +5,10 @@
 "use strict";
 // MODULES
 // =========
-let User = require('./model/user');
-let Poll = require('./model/poll');
-let path = require('path');
-let dbSearch = require('./scripts/dbsearch');
+const User = require('./model/user');
+const Poll = require('./model/poll');
+const path = require('path');
+const dbSearch = require('./scripts/dbsearch');
 
 module.exports = (app, router) => {
     //middleware to use for all requests
@@ -20,22 +20,22 @@ module.exports = (app, router) => {
 
     // route for creating a new user using POST
     router.route('/newuser')
-        .post(function(req, res) {
-            var username = req.body.username;
-            var email = req.body.email;
-            var password = req.body.password;
+        .post((req, res) => {
+            let username = req.body.username;
+            let email = req.body.email;
+            let password = req.body.password;
 
             if(dbSearch.user(username)) {
                 res.send('username is already in use');
             } else if (dbSearch.email(email)) {
                 res.send('email is already in use');
             } else if (username !== '' && email !== '' && password !== '') {
-                var user = new User();
+                let user = new User();
                 user.username = username;
                 user.email = email;
                 user.password = user.generateHash(password);
 
-                user.save(function(err) {
+                user.save((err) => {
                     if(err)
                         res.send(err);
 
@@ -51,15 +51,15 @@ module.exports = (app, router) => {
     // ====================
     // poll data
     router.route('/api/polldata/:id')
-        .get(function(req, res) {
+        .get((req, res) => {
             res.send('data');
         });
     // user data
     router.route('/users/:username')
-        .get(function(req, res) {
-            var input = req.params.username;
+        .get((req, res) => {
+            let input = req.params.username;
             if(dbSearch.user(input)) {
-                User.find({ username: input}, function(err, links) {
+                User.find({ username: input}, (err, links) => {
                     if(links.length){
                         res.json(links);
                     } else {
