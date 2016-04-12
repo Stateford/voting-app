@@ -2,6 +2,8 @@
 /*jslint node: true*/
 /*jslint esnext: true*/
 
+"use strict";
+
 // modules
 // ========
 const express = require('express');
