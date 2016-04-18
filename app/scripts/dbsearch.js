@@ -1,16 +1,18 @@
 // app/scripts/dbsearch.js
-/*jslint node: true*/
-/*jslint esnext: true*/
-//
-// module
-// ===============================
+/*jslint node: true, esversion: 6*/
+/*
+* checks to see if user or password
+* already exists in the database
+*/
+// MODULE
+// =======
 const mongoose = require('mongoose');
 
-// config
+// CONFIG
 // ========
 const configDB = require('../../config/database');
 
-// schemas
+// SCHEMAS
 // ==========
 const User = require('../model/user');
 const Poll = require('../model/poll');
