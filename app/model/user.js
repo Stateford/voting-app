@@ -1,7 +1,6 @@
 // app/model/user.js
-/*jslint node: true*/
-/*jslint esnext: true*/
-
+/*jslint node: true, esversion: 6*/
+"use strict";
 // modules
 // =========
 const mongoose = require('mongoose');
@@ -9,8 +8,7 @@ const bcrypt = require('bcrypt-nodejs');
 const Schema = mongoose.Schema;
 
 // scripts
-const configDB = require('../../config/database');
-const connection = mongoose.createConnection(configDB.db);
+const connection = mongoose.createConnection(process.env.DATABASE);
 
 const userSchema = new Schema({
     username: String,

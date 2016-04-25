@@ -2,9 +2,6 @@
 /*
 keeps all the scripts in one file
 */
-
-module.exports = {
-    dbsearch: require('./app/scripts/dbsearch'),
-    passport: require('./app/scripts/passport'),
-    trending: require('./app/scripts/trending')
-};
+exports.dbsearch = require('./app/scripts/dbsearch');
+exports.passport = require('./app/scripts/passport');
+exports.trending = require('./app/scripts/trending');

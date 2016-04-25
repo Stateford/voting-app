@@ -8,17 +8,13 @@
 // =======
 const mongoose = require('mongoose');
 
-// CONFIG
-// ========
-const configDB = require('../../config/database');
-
 // SCHEMAS
 // ==========
 const User = require('../model/user');
 const Poll = require('../model/poll');
 
 // establish connection
-mongoose.connect(configDB.db);
+mongoose.connect(process.env.PORT);
 
 
 

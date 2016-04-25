@@ -6,3 +6,4 @@ data/
 *.bat
 *.sh
 .tern-project
+.env

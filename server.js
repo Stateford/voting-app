@@ -1,11 +1,11 @@
 // server.js
-/*jslint node: true*/
-/*jslint esnext: true*/
+/*jslint node: true, esversion: 6*/
 
 "use strict";
 
 // modules
 // ========
+require('dotenv').load();
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -18,16 +18,11 @@ const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 
-// config
-const configDB = require('./config/database');
-const host = require('./config/host');
 
-// scripts
-const dbSearch = require('./app/scripts/dbsearch');
-
+const scripts = require('./scripts');
 // connect to database
 const mongoose = require('mongoose');
-// mongoose.connect(configDB.db);
+// mongoose.connect(process.env.DATABASE);
 
 
 // confiure app to use bodyParser()
@@ -38,9 +33,7 @@ app.use(morgan('dev'));  // logs every request to console
 // load mongoose schemas
 const User = require('./app/model/user');
 const Poll = require('./app/model/poll');
-
 // connect to the database
-// mongoose.connect(configDB.db);
 
 
 // use middleware
@@ -61,5 +54,5 @@ app.use(express.static(__dirname + '/public'));
 app.use('/', router);
 // start server
 // ============
-app.listen(host.port);
-console.log('server is listening to port: ' + host.port);
+app.listen(process.env.PORT);
+console.log('server is listening to port: ' + process.env.PORT);
