@@ -1,12 +1,10 @@
 // app/model/poll.js
-/*jslint node: true*/
-/*jslint esnext: true*/
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const voteSchema = new Schema({
-    ip: 'String'
+    ip: String
 });
 
 const optionsSchema = new Schema({

@@ -1,6 +1,4 @@
 // app/model/user.js
-/*jslint node: true, esversion: 6*/
-"use strict";
 // modules
 // =========
 const mongoose = require('mongoose');

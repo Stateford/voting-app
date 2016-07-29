@@ -1,7 +1,4 @@
 // server.js
-/*jslint node: true, esversion: 6*/
-
-"use strict";
 
 // modules
 // ========

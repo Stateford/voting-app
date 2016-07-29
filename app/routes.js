@@ -1,8 +1,5 @@
 // app/routes.js
-/*jslint node: true*/
-/*jslint esnext: true*/
 
-"use strict";
 // MODULES
 // =========
 const User = require('./model/user');

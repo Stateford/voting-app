@@ -1,5 +1,4 @@
 // app/scripts/dbsearch.js
-/*jslint node: true, esversion: 6*/
 /*
 * checks to see if user or password
 * already exists in the database
